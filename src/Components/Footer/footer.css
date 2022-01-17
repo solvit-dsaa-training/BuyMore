@@ -1,0 +1,12 @@
+.footer {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url("https://cdn.pixabay.com/photo/2016/11/23/15/48/audience-1853662_960_720.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
