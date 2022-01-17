@@ -2,7 +2,6 @@ import * as React from "react"
 import ListItemIcon from "@mui/material/ListItemIcon"
 import ListItemText from "@mui/material/ListItemText"
 import ListItemButton from "@mui/material/ListItemButton"
-import DashboardIcon from "@mui/icons-material/Dashboard"
 import ExpandLess from "@mui/icons-material/ExpandLess"
 import ExpandMore from "@mui/icons-material/ExpandMore"
 import EventIcon from "@mui/icons-material/Event"
@@ -13,12 +12,26 @@ import PendingActionsIcon from "@mui/icons-material/PendingActions"
 import ThumbDownAltIcon from "@mui/icons-material/ThumbDownAlt"
 import DoneAllIcon from "@mui/icons-material/DoneAll"
 import AirplaneTicketIcon from "@mui/icons-material/AirplaneTicket"
+import TimelineIcon from "@mui/icons-material/Timeline"
+import TrendingUpIcon from "@mui/icons-material/TrendingUp"
 import PaidIcon from "@mui/icons-material/Paid"
 import AssignmentReturnIcon from "@mui/icons-material/AssignmentReturn"
 import Collapse from "@mui/material/Collapse"
 import { useStyles } from "./style"
 
-const MainListItems = ({ setOpen }) => {
+const MainListItems = ({
+  handleAnalytics,
+  handleSales,
+  handlePending,
+  handleApproved,
+  handleRejected,
+  handleHappened,
+  handleSoldTicket,
+  handleRefunds,
+  handleCreateEvent,
+  handleUsers,
+  setOpen,
+}) => {
   const classes = useStyles()
   const [event, setEvent] = React.useState(true)
   const [ticket, setTicket] = React.useState(true)
@@ -37,11 +50,17 @@ const MainListItems = ({ setOpen }) => {
   return (
     <React.Fragment>
       <div>
-        <ListItemButton>
-          <ListItemIcon onClick={handleDrawer}>
-            <DashboardIcon className={classes.Icons} />
+        <ListItemButton onClick={handleAnalytics}>
+          <ListItemIcon>
+            <TimelineIcon className={classes.Icons} />
           </ListItemIcon>
-          <ListItemText primary="Dashboard" className={classes.labels} />
+          <ListItemText primary="Analytics" className={classes.labels} />
+        </ListItemButton>
+        <ListItemButton onClick={handleSales}>
+          <ListItemIcon>
+            <TrendingUpIcon className={classes.Icons} />
+          </ListItemIcon>
+          <ListItemText primary="Sales" className={classes.labels} />
         </ListItemButton>
         <ListItemButton onClick={handleEvents}>
           <ListItemIcon onClick={handleDrawer}>
@@ -55,7 +74,7 @@ const MainListItems = ({ setOpen }) => {
           )}
         </ListItemButton>
         <Collapse in={event} timeout="auto" unmountOnExit>
-          <ListItemButton onClick={handleDrawer}>
+          <ListItemButton onClick={handleCreateEvent}>
             <ListItemIcon className={classes.InnerIcon}>
               <AddBoxIcon
                 className={classes.Icons}
@@ -64,7 +83,7 @@ const MainListItems = ({ setOpen }) => {
             </ListItemIcon>
             <ListItemText primary="Create" className={classes.labels} />
           </ListItemButton>
-          <ListItemButton onClick={handleDrawer}>
+          <ListItemButton onClick={handlePending}>
             <ListItemIcon className={classes.InnerIcon}>
               <PendingActionsIcon
                 className={classes.Icons}
@@ -73,7 +92,7 @@ const MainListItems = ({ setOpen }) => {
             </ListItemIcon>
             <ListItemText primary="Pending" className={classes.labels} />
           </ListItemButton>
-          <ListItemButton onClick={handleDrawer}>
+          <ListItemButton onClick={handleApproved}>
             <ListItemIcon className={classes.InnerIcon}>
               <ThumbUpAltIcon
                 className={classes.Icons}
@@ -82,7 +101,7 @@ const MainListItems = ({ setOpen }) => {
             </ListItemIcon>
             <ListItemText primary="Approved " className={classes.labels} />
           </ListItemButton>
-          <ListItemButton onClick={handleDrawer}>
+          <ListItemButton onClick={handleRejected}>
             <ListItemIcon className={classes.InnerIcon}>
               <ThumbDownAltIcon
                 className={classes.Icons}
@@ -91,7 +110,7 @@ const MainListItems = ({ setOpen }) => {
             </ListItemIcon>
             <ListItemText primary="Rejected" className={classes.labels} />
           </ListItemButton>
-          <ListItemButton onClick={handleDrawer}>
+          <ListItemButton onClick={handleHappened}>
             <ListItemIcon className={classes.InnerIcon}>
               <DoneAllIcon
                 className={classes.Icons}
@@ -113,7 +132,7 @@ const MainListItems = ({ setOpen }) => {
           )}
         </ListItemButton>
         <Collapse in={ticket} timeout="auto" unmountOnExit>
-          <ListItemButton onClick={handleDrawer}>
+          <ListItemButton onClick={handleSoldTicket}>
             <ListItemIcon className={classes.InnerIcon}>
               <PaidIcon
                 className={classes.Icons}
@@ -122,7 +141,7 @@ const MainListItems = ({ setOpen }) => {
             </ListItemIcon>
             <ListItemText primary="Sold" className={classes.labels} />
           </ListItemButton>
-          <ListItemButton onClick={handleDrawer}>
+          <ListItemButton onClick={handleRefunds}>
             <ListItemIcon className={classes.InnerIcon}>
               <AssignmentReturnIcon
                 className={classes.Icons}
@@ -132,6 +151,12 @@ const MainListItems = ({ setOpen }) => {
             <ListItemText primary="Refunded" className={classes.labels} />
           </ListItemButton>
         </Collapse>
+        <ListItemButton onClick={handleUsers}>
+          <ListItemIcon>
+            <PeopleIcon className={classes.Icons} />
+          </ListItemIcon>
+          <ListItemText primary="Users" className={classes.labels} />
+        </ListItemButton>
       </div>
     </React.Fragment>
   )
