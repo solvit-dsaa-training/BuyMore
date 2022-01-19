@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\EventController;
+use App\Http\Middleware\CheckUser;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,9 @@ use App\Http\Controllers\AuthController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
 Route::post('login',[AuthController::class,"login"]);
-Route::post('logout',[AuthController::class,"logout"]);
+
+Route::middleware([CheckUser::class])->group(function () {
+    Route::post('registerEvent',[EventController::class,"createEvent"]);
+    Route::post('logout',[AuthController::class,"logout"]);
+});
