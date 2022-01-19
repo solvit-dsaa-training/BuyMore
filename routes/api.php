@@ -19,6 +19,6 @@ use App\Http\Middleware\CheckUser;
 Route::post('login',[AuthController::class,"login"]);
 
 Route::middleware([CheckUser::class])->group(function () {
-    Route::post('registerEvent',[EventController::class,"createEvent"]);
+    Route::post('registerEvent',[EventController::class,"register"]);
     Route::post('logout',[AuthController::class,"logout"]);
 });
