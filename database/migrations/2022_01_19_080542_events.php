@@ -18,6 +18,16 @@ class Events extends Migration
             $table->string('title');
             $table->string('description');
             $table->string('bannerImage');
+            $table->string('startDate');
+            $table->string('endDate');
+            $table->string('status');
+            $table->string('location');
+            $table->string('venue');
+            $table->string('organizer');
+            $table->string('category');
+            $table->string('address');
+            $table->string('phone');
+            $table->string('email');
             $table->timestamps();
         });
     }
