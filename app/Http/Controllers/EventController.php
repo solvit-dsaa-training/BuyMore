@@ -32,6 +32,7 @@ class EventController extends Controller
 
         $path = $request->file('image')->store('images/eventBanner'); 
         $save = new Event; 
+        $save->owner = $request->cookie('data');
         $save->title = $request->input('title');
         $save->description = $request->input('desc');
         $save->bannerImage = $path;

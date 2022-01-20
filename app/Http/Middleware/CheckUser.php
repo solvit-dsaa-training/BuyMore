@@ -16,7 +16,7 @@ class CheckUser
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!$request->cookie('jwt')) {
+        if (!$request->cookie('userData')) {
             return route('login');
         }else{
             return $next($request);

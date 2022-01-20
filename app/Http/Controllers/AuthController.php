@@ -20,9 +20,10 @@ class AuthController extends Controller
         $user = Auth::User();
         $token = $user->createToken('token')->plainTextToken;
         $cookie = cookie('jwt',$token,60*24);
+        $cookie = cookie('data',$user->id,60*24);
         return response([
             'token:'=>$token,
-            'userId=' =>$user->id
+            'userId=' =>$user->name
         ])->withCookie($cookie);
     }
 
