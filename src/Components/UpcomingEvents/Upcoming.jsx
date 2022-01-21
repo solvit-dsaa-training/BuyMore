@@ -2,6 +2,8 @@ import React from "react"
 import { Row, Col, Card } from "antd"
 import { useStyles } from "./style"
 import { useNavigate } from "react-router-dom"
+import DateRangeIcon from "@mui/icons-material/DateRange"
+import MapIcon from "@mui/icons-material/Map"
 import "./animation.css"
 
 /**
@@ -16,12 +18,19 @@ const Upcoming = () => {
   const handleDetails = () => {
     naviagte("/event/details")
   }
+  const [loading, setLoading] = React.useState(true)
+
+  setTimeout(() => {
+    setLoading(false)
+  }, 5000)
+
   return (
     <React.Fragment>
       <div className={classes.upcomings}>
         <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-          <Col className="gutter-row" span={6}>
+          <Col className="gutter-row" span={8}>
             <Card
+              loading={loading}
               hoverable
               className={classes.Card}
               onClick={handleDetails}
@@ -33,13 +42,19 @@ const Upcoming = () => {
               }
             >
               <div className="event__card__description">
-                <div>
-                  <strong>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry
-                  </strong>
+                <div className={classes.eventCardDates}>
+                  <h2 className={classes.EventTitle}>Event Title Here</h2>
                   <div className={classes.eventTime}>
-                    <span>Today: 8h:00-11h:00</span>
+                    <div>
+                      <DateRangeIcon className={classes.Icon} />
+                      &nbsp; &nbsp;
+                      <span>Friday 31-01-22</span>
+                    </div>
+                    <div>
+                      <MapIcon className={classes.Icon} />
+                      &nbsp; &nbsp;
+                      <span>Kigali View Hotel</span>
+                    </div>
                   </div>
                 </div>
                 <div className="event__ticketbtn-container">
@@ -48,11 +63,12 @@ const Upcoming = () => {
               </div>
             </Card>
           </Col>
-          <Col className="gutter-row" span={6}>
+          <Col className="gutter-row" span={8}>
             <Card
               className={classes.Card}
               onClick={handleDetails}
               hoverable
+              loading={loading}
               cover={
                 <img
                   alt="example"
@@ -61,13 +77,19 @@ const Upcoming = () => {
               }
             >
               <div className="event__card__description">
-                <div>
-                  <strong>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry
-                  </strong>
+                <div className={classes.eventCardDates}>
+                  <h2 className={classes.EventTitle}>Event Title Here</h2>
                   <div className={classes.eventTime}>
-                    <span>Today: 8h:00-11h:00</span>
+                    <div>
+                      <DateRangeIcon className={classes.Icon} />
+                      &nbsp; &nbsp;
+                      <span>Friday 31-01-22</span>
+                    </div>
+                    <div>
+                      <MapIcon className={classes.Icon} />
+                      &nbsp; &nbsp;
+                      <span>Kigali View Hotel</span>
+                    </div>
                   </div>
                 </div>
                 <div className="event__ticketbtn-container">
@@ -76,11 +98,12 @@ const Upcoming = () => {
               </div>
             </Card>
           </Col>
-          <Col className="gutter-row" span={6}>
+          <Col className="gutter-row" span={8}>
             <Card
               className={classes.Card}
               onClick={handleDetails}
               hoverable
+              loading={loading}
               cover={
                 <img
                   alt="example"
@@ -89,41 +112,19 @@ const Upcoming = () => {
               }
             >
               <div className="event__card__description">
-                <div>
-                  <strong>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry
-                  </strong>
+                <div className={classes.eventCardDates}>
+                  <h2 className={classes.EventTitle}>Event Title Here</h2>
                   <div className={classes.eventTime}>
-                    <span>Today: 8h:00-11h:00</span>
-                  </div>
-                </div>
-                <div className="event__ticketbtn-container">
-                  <button className="event__ticketbtn">Buy Ticket</button>
-                </div>
-              </div>
-            </Card>
-          </Col>
-          <Col className="gutter-row" span={6}>
-            <Card
-              className={classes.Card}
-              onClick={handleDetails}
-              hoverable
-              cover={
-                <img
-                  alt="example"
-                  src="https://cdn.pixabay.com/photo/2016/11/18/15/44/audience-1835431__340.jpg"
-                />
-              }
-            >
-              <div className="event__card__description">
-                <div>
-                  <strong>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry
-                  </strong>
-                  <div className={classes.eventTime}>
-                    <span>Today: 8h:00-11h:00</span>
+                    <div>
+                      <DateRangeIcon className={classes.Icon} />
+                      &nbsp; &nbsp;
+                      <span>Friday 31-01-22</span>
+                    </div>
+                    <div>
+                      <MapIcon className={classes.Icon} />
+                      &nbsp; &nbsp;
+                      <span>Kigali View Hotel</span>
+                    </div>
                   </div>
                 </div>
                 <div className="event__ticketbtn-container">

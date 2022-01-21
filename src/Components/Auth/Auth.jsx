@@ -58,7 +58,7 @@ const Auth = ({ isSignUp, isLogin }) => {
         <div>
           <GoogleLogin
             className={classes.googleBtn}
-            clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+            clientId="65688288942-pf0sgh5gcvnneskbgspl6mel27bbuf91.apps.googleusercontent.com"
             buttonText="Signup with Goolge"
             onSuccess={responseGoogle}
             onFailure={responseGoogle}

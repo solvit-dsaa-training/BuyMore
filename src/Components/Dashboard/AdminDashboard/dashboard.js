@@ -20,14 +20,12 @@ import Avatar from "@mui/material/Avatar"
 import SideBar from "./Sidebar"
 import { useStyles } from "./style"
 import Analytics from "./Analytics"
-import Sales from "./Sales"
 import PendingEvents from "./PendingEvents"
-import ApprovedEvents from "./ApprovedEvents"
 import CreateEvent from "./CreateEvent"
 import HappenedEvents from "./Happened"
 import Refunded from "./Refunded"
-import Rejected from "./Rejected"
 import SoldTicket from "./SOldTickets"
+import CreateTicket from "./CreateTicket"
 import Users from "./Users"
 
 const drawerWidth = 240
@@ -82,15 +80,13 @@ const DashboardContent = () => {
   const classes = useStyles()
   const [open, setOpen] = React.useState(true)
   const [isAnalytics, setIsAnalytics] = React.useState(true)
-  const [isSales, setIsSales] = React.useState(false)
   const [isPending, setIsPending] = React.useState(false)
-  const [isApproved, setIsApproved] = React.useState(false)
-  const [isRejected, setIsRejected] = React.useState(false)
   const [isHappened, setIsHappened] = React.useState(false)
   const [isSoldTicket, setIsSoldTicket] = React.useState(false)
   const [isRefunded, setIsRefunded] = React.useState(false)
   const [isCreateEvent, setIsCreateEvent] = React.useState(false)
   const [isUsers, setIsUsers] = React.useState(false)
+  const [isCreateTicket, setIsCreateTicket] = React.useState(false)
   const [Content, setContent] = React.useState(<Analytics />)
 
   const toggleDrawer = () => {
@@ -98,134 +94,90 @@ const DashboardContent = () => {
   }
   const handleAnalytics = () => {
     setIsAnalytics(true)
-    setIsSales(false)
     setIsPending(false)
-    setIsApproved(false)
-    setIsRejected(false)
     setIsHappened(false)
     setIsSoldTicket(false)
     setIsRefunded(false)
     setIsCreateEvent(false)
-    setIsUsers(false)
-    setOpen(true)
-  }
-
-  const handleSales = () => {
-    setIsAnalytics(false)
-    setIsSales(true)
-    setIsPending(false)
-    setIsApproved(false)
-    setIsRejected(false)
-    setIsHappened(false)
-    setIsSoldTicket(false)
-    setIsRefunded(false)
-    setIsCreateEvent(false)
+    setIsCreateTicket(false)
     setIsUsers(false)
     setOpen(true)
   }
   const handlePending = () => {
     setIsAnalytics(false)
-    setIsSales(false)
     setIsPending(true)
-    setIsApproved(false)
-    setIsRejected(false)
     setIsHappened(false)
     setIsSoldTicket(false)
     setIsRefunded(false)
     setIsCreateEvent(false)
+    setIsCreateTicket(false)
     setIsUsers(false)
     setOpen(true)
   }
-  const handleApproved = () => {
-    setIsAnalytics(false)
-    setIsSales(false)
-    setIsPending(false)
-    setIsApproved(true)
-    setIsRejected(false)
-    setIsHappened(false)
-    setIsSoldTicket(false)
-    setIsRefunded(false)
-    setIsCreateEvent(false)
-    setIsUsers(false)
-    setOpen(true)
-  }
-  const handleRejected = () => {
-    setIsAnalytics(false)
-    setIsSales(false)
-    setIsPending(false)
-    setIsApproved(false)
-    setIsRejected(true)
-    setIsHappened(false)
-    setIsSoldTicket(false)
-    setIsRefunded(false)
-    setIsCreateEvent(false)
-    setIsUsers(false)
-    setOpen(true)
-  }
-
   const handleHappened = () => {
     setIsAnalytics(false)
-    setIsSales(false)
     setIsPending(false)
-    setIsApproved(false)
-    setIsRejected(false)
     setIsHappened(true)
     setIsSoldTicket(false)
     setIsRefunded(false)
     setIsCreateEvent(false)
+    setIsCreateTicket(false)
     setIsUsers(false)
     setOpen(true)
   }
   const handleSoldTicket = () => {
     setIsAnalytics(false)
-    setIsSales(false)
     setIsPending(false)
-    setIsApproved(false)
-    setIsRejected(false)
     setIsHappened(false)
     setIsSoldTicket(true)
     setIsRefunded(false)
     setIsCreateEvent(false)
     setIsUsers(false)
+    setIsCreateTicket(false)
     setOpen(true)
   }
   const handleRefunds = () => {
     setIsAnalytics(false)
-    setIsSales(false)
     setIsPending(false)
-    setIsApproved(false)
-    setIsRejected(false)
     setIsHappened(false)
     setIsSoldTicket(false)
     setIsCreateEvent(false)
     setIsUsers(false)
+    setIsCreateTicket(false)
     setIsRefunded(true)
     setOpen(true)
   }
   const handleCreateEvent = () => {
     setIsAnalytics(false)
-    setIsSales(false)
     setIsPending(false)
-    setIsApproved(false)
-    setIsRejected(false)
     setIsHappened(false)
     setIsSoldTicket(false)
     setIsRefunded(false)
     setIsUsers(false)
+    setIsCreateTicket(false)
     setIsCreateEvent(true)
     setOpen(true)
   }
   const handleUsers = () => {
     setIsAnalytics(false)
-    setIsSales(false)
     setIsPending(false)
-    setIsApproved(false)
-    setIsRejected(false)
     setIsHappened(false)
     setIsSoldTicket(false)
     setIsRefunded(false)
     setIsCreateEvent(false)
+    setIsCreateTicket(false)
     setIsUsers(true)
+    setOpen(true)
+  }
+  const handleCreateTickets = () => {
+    setIsAnalytics(false)
+    setIsPending(false)
+    setIsHappened(false)
+    setIsSoldTicket(false)
+    setIsRefunded(false)
+    setIsCreateEvent(false)
+    setIsUsers(false)
+    setIsCreateTicket(true)
     setOpen(true)
   }
 
@@ -233,17 +185,8 @@ const DashboardContent = () => {
     if (isAnalytics) {
       setContent(<Analytics />)
     }
-    if (isSales) {
-      setContent(<Sales />)
-    }
     if (isPending) {
       setContent(<PendingEvents />)
-    }
-    if (isApproved) {
-      setContent(<ApprovedEvents />)
-    }
-    if (isRejected) {
-      setContent(<Rejected />)
     }
     if (isHappened) {
       setContent(<HappenedEvents />)
@@ -260,17 +203,18 @@ const DashboardContent = () => {
     if (isUsers) {
       setContent(<Users />)
     }
+    if (isCreateTicket) {
+      setContent(<CreateTicket />)
+    }
   }, [
     isAnalytics,
-    isSales,
     isPending,
-    isApproved,
-    isRejected,
     isHappened,
     isSoldTicket,
     isRefunded,
     isCreateEvent,
     isUsers,
+    isCreateTicket,
   ])
 
   return (
@@ -317,6 +261,7 @@ const DashboardContent = () => {
               alt="user profile"
               src="https://avatars.githubusercontent.com/u/59208992?v=4"
             />
+            <button className={classes.LogoutBtn}> Logout</button>
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
@@ -337,15 +282,13 @@ const DashboardContent = () => {
             <SideBar
               setOpen={setOpen}
               handleAnalytics={handleAnalytics}
-              handleSales={handleSales}
               handlePending={handlePending}
-              handleApproved={handleApproved}
-              handleRejected={handleRejected}
               handleHappened={handleHappened}
               handleSoldTicket={handleSoldTicket}
               handleRefunds={handleRefunds}
               handleCreateEvent={handleCreateEvent}
               handleUsers={handleUsers}
+              handleCreateTickets={handleCreateTickets}
             />
           </List>
         </Drawer>

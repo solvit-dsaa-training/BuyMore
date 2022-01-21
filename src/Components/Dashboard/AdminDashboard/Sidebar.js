@@ -6,14 +6,11 @@ import ExpandLess from "@mui/icons-material/ExpandLess"
 import ExpandMore from "@mui/icons-material/ExpandMore"
 import EventIcon from "@mui/icons-material/Event"
 import PeopleIcon from "@mui/icons-material/People"
-import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt"
 import AddBoxIcon from "@mui/icons-material/AddBox"
 import PendingActionsIcon from "@mui/icons-material/PendingActions"
-import ThumbDownAltIcon from "@mui/icons-material/ThumbDownAlt"
 import DoneAllIcon from "@mui/icons-material/DoneAll"
 import AirplaneTicketIcon from "@mui/icons-material/AirplaneTicket"
 import TimelineIcon from "@mui/icons-material/Timeline"
-import TrendingUpIcon from "@mui/icons-material/TrendingUp"
 import PaidIcon from "@mui/icons-material/Paid"
 import AssignmentReturnIcon from "@mui/icons-material/AssignmentReturn"
 import Collapse from "@mui/material/Collapse"
@@ -21,21 +18,18 @@ import { useStyles } from "./style"
 
 const MainListItems = ({
   handleAnalytics,
-  handleSales,
   handlePending,
-  handleApproved,
-  handleRejected,
   handleHappened,
   handleSoldTicket,
   handleRefunds,
   handleCreateEvent,
   handleUsers,
+  handleCreateTickets,
   setOpen,
 }) => {
   const classes = useStyles()
   const [event, setEvent] = React.useState(true)
   const [ticket, setTicket] = React.useState(true)
-  const [focussed, setFocussed] = React.useState(true)
 
   const handleEvents = () => {
     setEvent(!event)
@@ -55,12 +49,6 @@ const MainListItems = ({
             <TimelineIcon className={classes.Icons} />
           </ListItemIcon>
           <ListItemText primary="Analytics" className={classes.labels} />
-        </ListItemButton>
-        <ListItemButton onClick={handleSales}>
-          <ListItemIcon>
-            <TrendingUpIcon className={classes.Icons} />
-          </ListItemIcon>
-          <ListItemText primary="Sales" className={classes.labels} />
         </ListItemButton>
         <ListItemButton onClick={handleEvents}>
           <ListItemIcon onClick={handleDrawer}>
@@ -92,24 +80,6 @@ const MainListItems = ({
             </ListItemIcon>
             <ListItemText primary="Pending" className={classes.labels} />
           </ListItemButton>
-          <ListItemButton onClick={handleApproved}>
-            <ListItemIcon className={classes.InnerIcon}>
-              <ThumbUpAltIcon
-                className={classes.Icons}
-                style={{ fontSize: "18px", marginLeft: "10px" }}
-              />
-            </ListItemIcon>
-            <ListItemText primary="Approved " className={classes.labels} />
-          </ListItemButton>
-          <ListItemButton onClick={handleRejected}>
-            <ListItemIcon className={classes.InnerIcon}>
-              <ThumbDownAltIcon
-                className={classes.Icons}
-                style={{ fontSize: "18px", marginLeft: "10px" }}
-              />
-            </ListItemIcon>
-            <ListItemText primary="Rejected" className={classes.labels} />
-          </ListItemButton>
           <ListItemButton onClick={handleHappened}>
             <ListItemIcon className={classes.InnerIcon}>
               <DoneAllIcon
@@ -117,7 +87,7 @@ const MainListItems = ({
                 style={{ fontSize: "18px", marginLeft: "10px" }}
               />
             </ListItemIcon>
-            <ListItemText primary="Happened" className={classes.labels} />
+            <ListItemText primary="Expired" className={classes.labels} />
           </ListItemButton>
         </Collapse>
         <ListItemButton onClick={handleTicket}>
@@ -132,6 +102,15 @@ const MainListItems = ({
           )}
         </ListItemButton>
         <Collapse in={ticket} timeout="auto" unmountOnExit>
+          <ListItemButton onClick={handleCreateTickets}>
+            <ListItemIcon className={classes.InnerIcon}>
+              <AddBoxIcon
+                className={classes.Icons}
+                style={{ fontSize: "18px", marginLeft: "10px" }}
+              />
+            </ListItemIcon>
+            <ListItemText primary="Create" className={classes.labels} />
+          </ListItemButton>
           <ListItemButton onClick={handleSoldTicket}>
             <ListItemIcon className={classes.InnerIcon}>
               <PaidIcon

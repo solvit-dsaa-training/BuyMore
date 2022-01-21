@@ -2,19 +2,15 @@ import React from "react"
 import "./event.css"
 import Navigation from "../Navigation/Navigation"
 import Grid from "@mui/material/Grid"
-import { Card } from "antd"
-import Speakers from "./EvetentSpeakers"
-import Schedule from "./EventSchedule"
+import Shedule from "./EventSchedule"
 import Footer from "../Footer/Footer"
-import EventTicket from "./EventTicket"
-
-const { Meta } = Card
 
 /**
  *
  *
  * @return {*}
  */
+
 const EVentDetails = () => {
   return (
     <React.Fragment>
@@ -26,29 +22,9 @@ const EVentDetails = () => {
           </h1>
           <button className="event__ticket--btn">Buy Ticket</button>
         </div>
-        <div className="event__description">
+        <div>
           <Grid container rowSpacing={1}>
-            <Grid item xs={6}>
-              <div className="event__speaker">
-                <Card
-                  hoverable
-                  className="event__speaker__card"
-                  cover={
-                    <img
-                      alt="example"
-                      src="https://cdn.pixabay.com/photo/2016/04/11/10/19/speaker-1321670_960_720.jpg"
-                    />
-                  }
-                >
-                  <Meta
-                    title="Dr. John Doe"
-                    description="Lorem Ipsum is simply dummy text of the
-                  printing and typesetting industry"
-                  />
-                </Card>
-              </div>
-            </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12}>
               <div className="event__description">
                 <h4 className="event__description-heading">
                   <strong>All about this event</strong>
@@ -65,13 +41,7 @@ const EVentDetails = () => {
               </div>
             </Grid>
             <Grid item xs={12}>
-              <Speakers />
-            </Grid>
-            <Grid item xs={12} className="event__schedule-container">
-              <Schedule />
-            </Grid>
-            <Grid item xs={12}>
-              <EventTicket />
+              <Shedule />
             </Grid>
           </Grid>
         </div>

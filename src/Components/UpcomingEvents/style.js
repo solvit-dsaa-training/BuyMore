@@ -18,17 +18,25 @@ export const useStyles = makeStyles({
   },
   Card: {
     position: "relative",
-    width: 300,
-    height: 360,
+    width: 400,
+    height: 500,
   },
-
-  HeartIcon: {
-    position: "absolute",
-    top: "5px",
-    left: "150px",
-    color: "#FFFFFF",
+  EventTitle: {
+    textAlign: "center",
+    fontSize: "20px",
+    textTransform: "capitalize",
+    marginBottom: "20px",
+  },
+  Icon: {
+    color: "#02b468",
+    marginBottom: "10px",
   },
   eventTime: {
     marginTop: "10px",
+    display: "flex",
+    flexDirection: "column",
+  },
+  eventCardDates: {
+    textAlign: "center",
   },
 })

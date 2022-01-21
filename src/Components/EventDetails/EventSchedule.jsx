@@ -1,6 +1,15 @@
 import React from "react"
 import "./event.css"
-import AccessTimeIcon from "@mui/icons-material/AccessTime"
+import { Row, Col, Divider } from "antd"
+import DateRangeOutlinedIcon from "@mui/icons-material/DateRangeOutlined"
+import EventAvailableOutlinedIcon from "@mui/icons-material/EventAvailableOutlined"
+import PendingActionsOutlinedIcon from "@mui/icons-material/PendingActionsOutlined"
+import PersonIcon from "@mui/icons-material/Person"
+import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined"
+import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined"
+import MapIcon from "@mui/icons-material/Map"
+import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined"
+import EventTickets from "./EventTicket"
 
 /**
  *
@@ -11,98 +20,141 @@ const EventSchedule = () => {
   return (
     <React.Fragment>
       <div className="event__schedule">
-        <div className="event__schedule__heading">Event Schedule</div>
-        <div className="event__schedule__time">
-          <div className="event__time-one">
-            <span>Day 1</span>
-          </div>
-          <div className="event__time-two">
-            <span>Day 2</span>
-          </div>
-          <div className="event__time-three">
-            <span>Day 3</span>
-          </div>
-          <div className="event__time-four">
-            <span>Day 4</span>
-          </div>
-          <div className="event__time-five">
-            <span>Day 5</span>
-          </div>
-        </div>
+        <h4 className="event__description__sub-heading">
+          <strong>Event Schedule</strong>
+        </h4>
         <div>
-          <div className="event__daily__action--container">
-            <div className="event__daily__action--card-one event-card">
-              <div className="speaker__picture">
-                <img
-                  src="https://cdn.pixabay.com/photo/2016/04/11/10/19/speaker-1321670_960_720.jpg"
-                  alt="speaker"
-                />
+          <Row
+            gutter={{ xs: 8, sm: 16, md: 24, lg: 10 }}
+            style={{ marginBottom: "40px" }}
+          >
+            <Col className="gutter-row" span={6}>
+              <div className="event__details_items">
+                <div>
+                  <DateRangeOutlinedIcon
+                    className="Icon"
+                    style={{ fontSize: "20px" }}
+                  />
+                  &nbsp;
+                  <span className="detail__item__one">
+                    <strong>Start Date</strong>
+                  </span>
+                  <span className="details__item__two">
+                    Friday 31-01-2022,07:00
+                  </span>
+                </div>
               </div>
-              <div className="event__daily__topic">
-                <span className="event__topic__name">Lorem Ipsum</span>
-                <span className="event__topic__speaker">John Smith</span>
+            </Col>
+            <Col className="gutter-row" span={6}>
+              <div className="event__details_items">
+                <div>
+                  <EventAvailableOutlinedIcon
+                    className="Icon"
+                    style={{ fontSize: "20px" }}
+                  />
+                  &nbsp;
+                  <span className="detail__item__one">
+                    <strong>End Date</strong>
+                  </span>
+                  <span className="details__item__two">
+                    Friday 31-01-2022,05:00
+                  </span>
+                </div>
               </div>
-              <div className="event_daily__time">
-                <span className="event__time_figures">
-                  <AccessTimeIcon className="timeIcon" />
-                  80 AM -11 PM
-                </span>
+            </Col>
+            <Col className="gutter-row" span={6}>
+              <div className="event__details_items">
+                <div>
+                  <PendingActionsOutlinedIcon
+                    className="Icon"
+                    style={{ fontSize: "20px" }}
+                  />
+                  &nbsp;
+                  <span className="detail__item__one">
+                    <strong>Status</strong>
+                  </span>
+                  <span className="details__item__two"> Pendig</span>
+                </div>
               </div>
-            </div>
-            <div className="event__daily__action--card-two event-card">
-              <div className="speaker__picture">
-                <img
-                  src="https://cdn.pixabay.com/photo/2016/04/11/10/19/speaker-1321670_960_720.jpg"
-                  alt="speaker"
-                />
+            </Col>
+            <Col className="gutter-row" span={6}>
+              <div className="event__details_items">
+                <div>
+                  <MapIcon className="Icon" style={{ fontSize: "20px" }} />
+                  &nbsp;
+                  <span className="detail__item__one">
+                    <strong>Venue</strong>
+                  </span>
+                  <span className="details__item__two">Kigali View Hotel</span>
+                </div>
               </div>
-              <div className="event__daily__topic">
-                <span className="event__topic__name">Lorem Ipsum</span>
-                <span className="event__topic__speaker">John Smith</span>
+            </Col>
+          </Row>
+          <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 10 }}>
+            <Col className="gutter-row" span={6}>
+              <div className="event__details_items">
+                <div>
+                  <PersonIcon className="Icon" style={{ fontSize: "20px" }} />
+                  &nbsp;
+                  <span className="detail__item__one">
+                    <strong>Organizer</strong>
+                  </span>
+                  <span className="details__item__two">Jean De Dieu</span>
+                </div>
               </div>
-              <div className="event_daily__time">
-                <span className="event__time_figures">
-                  <AccessTimeIcon className="timeIcon" />
-                  8:00 AM -11:00 PM
-                </span>
+            </Col>
+            <Col className="gutter-row" span={6}>
+              <div className="event__details_items">
+                <div>
+                  <LocationOnOutlinedIcon
+                    className="Icon"
+                    style={{ fontSize: "20px" }}
+                  />
+                  &nbsp;
+                  <span className="detail__item__one">
+                    <strong>Address</strong>
+                  </span>
+                  <span className="details__item__two">KK 23 Ave,Kigali</span>
+                </div>
               </div>
-            </div>
-            <div className="event__daily__action--card-three event-card">
-              <div className="speaker__picture">
-                <img
-                  src="https://cdn.pixabay.com/photo/2016/04/11/10/19/speaker-1321670_960_720.jpg"
-                  alt="speaker"
-                />
+            </Col>
+            <Col className="gutter-row" span={6}>
+              <div className="event__details_items">
+                <div>
+                  <PhoneAndroidOutlinedIcon
+                    className="Icon"
+                    style={{ fontSize: "20px" }}
+                  />
+                  &nbsp;
+                  <span className="detail__item__one">
+                    <strong>Phone</strong>
+                  </span>
+                  <span className="details__item__two"> +250784860836</span>
+                </div>
               </div>
-              <div className="event__daily__topic">
-                <span className="event__topic__name">Lorem Ipsum</span>
-                <span className="event__topic__speaker">John Smith</span>
+            </Col>
+            <Col className="gutter-row" span={6}>
+              <div className="event__details_items">
+                <div>
+                  <EmailOutlinedIcon
+                    className="Icon"
+                    style={{ fontSize: "20px" }}
+                  />
+                  &nbsp;
+                  <span className="detail__item__one">
+                    <strong>Email</strong>
+                  </span>
+                  <span className="details__item__two">Kigali View Hotel</span>
+                </div>
               </div>
-              <div className="event_daily__time">
-                <span className="event__time_figures">
-                  <AccessTimeIcon className="timeIcon" />
-                  80 AM -11 PM
-                </span>
-              </div>
-            </div>
-            <div className="event__daily__action--card-four event-card">
-              <div className="speaker__picture">
-                <img
-                  src="https://cdn.pixabay.com/photo/2016/04/11/10/19/speaker-1321670_960_720.jpg"
-                  alt="speaker"
-                />
-              </div>
-              <div className="event__daily__topic">
-                <span className="event__topic__name">Lorem Ipsum</span>
-                <span className="event__topic__speaker">John Smith</span>
-              </div>
-              <div className="event_daily__time">
-                <span className="event__time_figures">
-                  <AccessTimeIcon className="timeIcon" />
-                  80 AM -11 PM
-                </span>
-              </div>
-            </div>
+            </Col>
+          </Row>
+          <div>
+            <h4 className="event__description__sub-heading">
+              <strong>Tickect Packages</strong>
+            </h4>
+            <Divider />
+            <EventTickets />
           </div>
         </div>
       </div>

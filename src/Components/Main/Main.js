@@ -16,12 +16,6 @@ const Main = () => {
   return (
     <React.Fragment>
       <main className={classes.MainContainer}>
-        {/* <div>
-          <h4 className={classes.headerMain}>
-            Find events that suits your style
-          </h4>
-        </div> */}
-
         <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
           <Col className="gutter-row" span={24}>
             <div className={classes.SearchOptionContainer}>
