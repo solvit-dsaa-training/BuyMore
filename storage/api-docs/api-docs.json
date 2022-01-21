@@ -260,7 +260,12 @@
                     "403": {
                         "description": "Forbidden"
                     }
-                }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
             }
         },
         "/login": {
@@ -369,7 +374,12 @@
                     "403": {
                         "description": "Forbidden"
                     }
-                }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
             }
         },
         "/update-password": {
@@ -424,10 +434,15 @@
                     "403": {
                         "description": "Forbidden"
                     }
-                }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
             }
         },
-        "/users": {
+        "/admin/users": {
             "get": {
                 "tags": [
                     "System Admins"
@@ -455,12 +470,12 @@
                 },
                 "security": [
                     {
-                        "bearerAuth": []
+                        "bearer": []
                     }
                 ]
             }
         },
-        "/clients": {
+        "/admin/clients": {
             "get": {
                 "tags": [
                     "System Admins"
@@ -488,12 +503,12 @@
                 },
                 "security": [
                     {
-                        "bearerAuth": []
+                        "bearer": []
                     }
                 ]
             }
         },
-        "/users/{user}/view": {
+        "/admin/users/{user}/view": {
             "get": {
                 "tags": [
                     "System Admins"
@@ -531,12 +546,12 @@
                 },
                 "security": [
                     {
-                        "bearerAuth": []
+                        "bearer": []
                     }
                 ]
             }
         },
-        "/clients/{user}/view": {
+        "/admin/clients/{user}/view": {
             "get": {
                 "tags": [
                     "System Admins"
@@ -574,12 +589,12 @@
                 },
                 "security": [
                     {
-                        "bearerAuth": []
+                        "bearer": []
                     }
                 ]
             }
         },
-        "/users/{user}/block": {
+        "/admin/users/{user}/block": {
             "put": {
                 "tags": [
                     "System Admins"
@@ -615,7 +630,12 @@
                     "403": {
                         "description": "Forbidden"
                     }
-                }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
             }
         }
     },

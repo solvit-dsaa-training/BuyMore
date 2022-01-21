@@ -7,8 +7,8 @@ use App\Models\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UsersRequest;
 use App\Http\Resources\UserResource;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -267,6 +267,7 @@ class UserApiController extends Controller
      ** path="/update-user-info",
      *   summary="Update Profile Information",
      *   operationId="Admin Sign-Up",
+     *   security={{"bearer":{}}},
      *  @OA\Parameter(
      *      name="name",
      *      in="query",
@@ -444,6 +445,7 @@ class UserApiController extends Controller
      * @OA\Get(
      * * * tags={"General"},
      ** path="/logout",
+     * security={{"bearer":{}}},
      *   summary="Logout Logged In User",
      *   @OA\Response(
      *      response=200,
@@ -486,6 +488,7 @@ class UserApiController extends Controller
      ** path="/update-password",
      *   summary="Password Updating",
      *   operationId="Admin Sign-Up",
+     * security={{"bearer":{}}},
      *  @OA\Parameter(
      *      name="old_password",
      *      in="query",
@@ -580,9 +583,9 @@ class UserApiController extends Controller
     /**
      * @OA\Get(
      * * tags={"System Admins"},
-     ** path="/users",
+     ** path="/admin/users",
      * summary="Get list of all users",
-     * security={{"bearerAuth":{}}},
+     * security={{"bearer":{}}},
      *   @OA\Response(
      *      response=200,
      *       description="Success",
@@ -621,9 +624,9 @@ class UserApiController extends Controller
     /**
      * @OA\Get(
      * * tags={"System Admins"},
-     ** path="/clients",
+     ** path="/admin/clients",
      * summary="Get list of all users",
-     * security={{"bearerAuth":{}}},
+     * security={{"bearer":{}}},
      *   @OA\Response(
      *      response=200,
      *       description="Success",
@@ -662,9 +665,9 @@ class UserApiController extends Controller
     /**
      * @OA\Get(
      * * tags={"System Admins"},
-     ** path="/users/{user}/view",
+     ** path="/admin/users/{user}/view",
      * summary="View Specific user",
-     * security={{"bearerAuth":{}}},
+     * security={{"bearer":{}}},
      *   @OA\Response(
      *      response=200,
      *       description="Success",
@@ -712,9 +715,9 @@ class UserApiController extends Controller
     /**
      * @OA\Get(
      * * tags={"System Admins"},
-     ** path="/clients/{user}/view",
+     ** path="/admin/clients/{user}/view",
      * summary="View Specific user",
-     * security={{"bearerAuth":{}}},
+     * security={{"bearer":{}}},
      *   @OA\Response(
      *      response=200,
      *       description="Success",
@@ -762,9 +765,10 @@ class UserApiController extends Controller
     /**
      * @OA\Put(
      * * * * tags={"System Admins"},
-     ** path="/users/{user}/block",
+     ** path="/admin/users/{user}/block",
      *   summary="Block/Unblock Specific user",
      *   operationId="Admin Sign-Up",
+     *  security={{"bearer":{}}},
      *   @OA\Response(
      *      response=200,
      *       description="Success",

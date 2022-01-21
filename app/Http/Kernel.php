@@ -66,6 +66,8 @@ class Kernel extends HttpKernel
         // custom middleware
         'active'=>\App\Http\Middleware\IsActive::class,
         'admin'=>\App\Http\Middleware\IsAdmin::class,
+        'client'=>\App\Http\Middleware\IsClient::class,
+        'user'=>\App\Http\Middleware\IsUser::class,
         'auth.check'=>\App\Http\Middleware\AuthMiddleware::class,
         // JWT Tokens middlewares
         'jwt.verify' => \App\Http\Middleware\JwtMiddleware::class,

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\UserApiController;
+use App\Http\Controllers\EventsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,7 +27,7 @@ Route::middleware('auth:api','jwt.verify','active')->group(function(){
     Route::get('user', [UserApiController::class,'getAuthUser']);
 
     // only admin routes
-    Route::middleware('admin')->group(function(){
+    Route::middleware('admin')->prefix('admin')->group(function(){
         Route::get('users', [UserApiController::class,'getUsers']);
         Route::get('clients', [UserApiController::class,'getClients']);
         Route::get('users/{user}/view', [UserApiController::class,'getUser']);
@@ -34,6 +35,16 @@ Route::middleware('auth:api','jwt.verify','active')->group(function(){
         Route::put('users/{user}/block', [UserApiController::class,'blockUnblock']);
         Route::post('register-client',[UserApiController::class,'registerClient']);
         Route::post('register-admin',[UserApiController::class,'registerAdmin']);
+    });
+
+    // only client routes
+    Route::middleware('client')->prefix('dashboard')->group(function(){
+        Route::post('register-event',[EventsController::class,'store']);
+    });
+
+    // only normal users routes
+    Route::middleware('user')->group(function(){
+        
     });
 });
 
