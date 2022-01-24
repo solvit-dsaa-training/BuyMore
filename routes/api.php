@@ -1,10 +1,9 @@
 <?php
 
+use App\Http\Controllers\Api\UserApiController;
+use App\Http\Controllers\EventsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\EventController;
-use App\Http\Middleware\CheckUser;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,14 +15,7 @@ use App\Http\Middleware\CheckUser;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::post('login',[AuthController::class,"login"]);
 
-<<<<<<< Updated upstream
-Route::middleware([CheckUser::class])->group(function () {
-    Route::post('registerEvent',[EventController::class,"createEvent"]);
-    Route::post('logout',[AuthController::class,"logout"]);
-});
-=======
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -57,6 +49,5 @@ Route::middleware('auth:api','jwt.verify','active')->group(function(){
 });
 
 Route::post('register',[UserApiController::class,'register']);
-Route::post('login', [UserApiController::class,'login']); 
+Route::post('login', [UserApiController::class,'login']);
 
->>>>>>> Stashed changes
