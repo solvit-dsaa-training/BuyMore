@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\TicketsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ForgotPasswordController;
@@ -25,3 +25,10 @@ Route::post('/forget-password',  [ForgotPasswordController::class, 'postEmail'])
 Route::post('/reset-password/{token}', [ResetPasswordController::class, 'getPassword']);
 Route::post('/reset-password', [ResetPasswordController::class, 'updatePassword']);
 
+Route::resource('tickets', TicketsController::class);
+
+// Route::get('/tickets',[TicketsController::class, 'index']);
+// Route::post('/tickets', [TicketsController::class, 'store']); 
+// Route::post('/tickets', [TicketsController::class, 'show']);
+// Route::post('/tickets', [TicketsController::class, 'update']);
+// Route::post('/tickets', [TicketsController::class, 'destroy']);
