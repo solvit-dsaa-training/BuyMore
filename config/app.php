@@ -161,8 +161,11 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+<<<<<<< HEAD
         L5Swagger\L5SwaggerServiceProvider::class,
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+=======
+>>>>>>> b75f43ea1f042238e92bad9a71f1e35231827bb9
 
         /*
          * Package Service Providers...
@@ -232,9 +235,12 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+<<<<<<< HEAD
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
 
+=======
+>>>>>>> b75f43ea1f042238e92bad9a71f1e35231827bb9
     ],
 
 ];

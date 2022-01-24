@@ -37,5 +37,6 @@ class Controller extends BaseController
     *     securityScheme="bearer",
     * )
      */
+
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }
