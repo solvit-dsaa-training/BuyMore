@@ -1,0 +1,77 @@
+.header {
+  width: 100%;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("https://images.unsplash.com/photo-1561489396-888724a1543d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70vh;
+  background-attachment: fixed;
+}
+.welcome__mesage__container {
+  position: relative;
+}
+.event__welcome-message span {
+  top: -340px;
+  left: 100px;
+  position: absolute;
+  letter-spacing: 5px;
+  font-size: 40px;
+  color: #ffffff;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+  animation: MoveInTop 1s ease-out;
+}
+@keyframes MoveInTop {
+  0% {
+    opacity: 0;
+    transition: translateY(100px);
+  }
+  80% {
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transition: translateY(0);
+  }
+}
+.welcome__ticket__btn {
+  position: absolute;
+  background-color: #02b468;
+  border-radius: 100px;
+  font-size: 20px;
+  color: #ffffff;
+  top: -200px;
+  left: 320px;
+  width: 200px;
+  padding: 10px;
+  border-style: none;
+  transition: all 1s;
+  text-transform: uppercase;
+}
+.welcome__ticket__btn:hover {
+  transform: translateY(-6px);
+}
+.welcome__ticket__btn::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #02b468;
+  border-radius: 100px;
+  z-index: -1;
+  transition: all 1s ease-out;
+  text-transform: uppercase;
+}
+
+.welcome__ticket__btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
