@@ -101,9 +101,10 @@ class UserApiController extends Controller
     }
     /**
      * @OA\Post(
-     * * tags={"Clients"},
-     ** path="/register-client",
-     *   summary="register new Cleint",
+     * * tags={"System Admins"},
+     **  path="/admin/register-client",
+     *   security={{"bearer":{}}},
+     *   summary="register new Client",
      *   operationId="New Client Registration",
      *  @OA\Parameter(
      *      name="name",

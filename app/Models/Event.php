@@ -34,4 +34,24 @@ class Event extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    /**
+     * Get all of the tickets for the Event
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class);
+    }
+
+    /**
+     * Get all of the sponsors for the Event
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function sponsors()
+    {
+        return $this->hasMany(Sponsor::class);
+    }
 }

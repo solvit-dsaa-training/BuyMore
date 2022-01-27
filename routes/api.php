@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\SponsorsController;
+use App\Http\Controllers\Api\TicketsController;
 use App\Http\Controllers\Api\UserApiController;
 use App\Http\Controllers\EventsController;
 use Illuminate\Http\Request;
@@ -35,11 +37,26 @@ Route::middleware('auth:api','jwt.verify','active')->group(function(){
         Route::put('users/{user}/block', [UserApiController::class,'blockUnblock']);
         Route::post('register-client',[UserApiController::class,'registerClient']);
         Route::post('register-admin',[UserApiController::class,'registerAdmin']);
+        Route::get('events',[EventsController::class,'index']);
+        Route::get('events/{event}/view',[EventsController::class,'show']);
+        Route::put('events/{event}/mark-as-complete',[EventsController::class,'markAsComplete']);
+        Route::put('events/{event}/Cancel',[EventsController::class,'cancel']);
+        Route::put('events/{event}/Approve',[EventsController::class,'approve']);
+        Route::delete('events/{event}/delete',[EventsController::class,'destroy']);
     });
 
     // only client routes
     Route::middleware('client')->prefix('dashboard')->group(function(){
+        Route::put('events/{event}/update',[EventsController::class,'update']);
+        Route::get('events/{event}/view',[EventsController::class,'show']);
         Route::post('register-event',[EventsController::class,'store']);
+        Route::post('events/{event}/sponsor/add',[SponsorsController::class,'store']);
+        Route::delete('events/sponsors/{sponsor}/delete',[EventsController::class,'delete']);
+        Route::get('tickets',[TicketsController::class,'index']);
+        Route::post('tickets/add-new-ticket',[TicketsController::class,'store']);
+        Route::get('tickets/{ticket}/view',[TicketsController::class,'show']);
+        Route::put('tickets/{ticket}/update',[TicketsController::class,'update']);
+        Route::delete('tickets/{ticket}/delete',[TicketsController::class,'destroy']);
     });
 
     // only normal users routes
