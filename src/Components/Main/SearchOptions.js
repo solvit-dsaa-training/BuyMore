@@ -12,9 +12,9 @@ const SearchOptions = () => {
   const classes = useStyles()
   return (
     <React.Fragment>
-      <div className={`${classes.searchContainer} container`}>
-        <form className={`${classes.searchForm} search__form`}>
-          <select className={classes.searchCategories}>
+      <div className="container">
+        <form className="search__form">
+          <select className="searchCategories">
             <option>Location</option>
             <option>Paid</option>
             <option>Music</option>
@@ -32,13 +32,9 @@ const SearchOptions = () => {
             <option>Kids</option>
             <option>Family</option>
           </select>
-          <input
-            type="search"
-            placeholder="search an event ..."
-            className={classes.Input}
-          />
+          <input type="search" placeholder="search an event ..." />
           <div>
-            <button className={classes.searbBtn}>Search</button>
+            <button className="search__btn">Search</button>
           </div>
         </form>
       </div>

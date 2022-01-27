@@ -1,6 +1,12 @@
 import { makeStyles } from "@mui/styles"
 
 export const useStyles = makeStyles({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    textAlign: "center",
+  },
   upcomings: {
     marginTop: "50px",
   },
@@ -18,8 +24,8 @@ export const useStyles = makeStyles({
   },
   Card: {
     position: "relative",
-    width: 400,
-    height: 500,
+    width: "100%",
+    alignContent: "space-between",
   },
   EventTitle: {
     textAlign: "center",

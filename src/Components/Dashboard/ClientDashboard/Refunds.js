@@ -1,46 +1,31 @@
 import React from "react"
-import { useStyles } from "./style"
-import { Divider } from "antd"
-import Payment from "./Payment"
 import Grid from "@material-ui/core/Grid"
+import { useStyles } from "./style"
 
-const TicketShop = () => {
+const Refunds = () => {
   const classes = useStyles()
-
   return (
     <React.Fragment>
-      <Grid container spacing={1}>
+      <Grid container spacing={2}>
         <Grid item xs={12} sm={6} md={6} xl={6}>
           <input
             type="text"
-            placeholder="FirstName"
+            placeholder="First name"
             className={classes.Inputs}
-            required
           />
         </Grid>
         <Grid item xs={12} sm={6} md={6} xl={6}>
           <input
             type="text"
-            placeholder="LastName"
+            placeholder="Last name"
             className={classes.Inputs}
-            required
           />
         </Grid>
         <Grid item xs={12} sm={6} md={6} xl={6}>
-          <input
-            type="email"
-            placeholder="Email"
-            className={classes.Inputs}
-            required
-          />
+          <input type="email" placeholder="Email" className={classes.Inputs} />
         </Grid>
         <Grid item xs={12} sm={6} md={6} xl={6}>
-          <input
-            type="number"
-            placeholder="Phone"
-            className={classes.Inputs}
-            required
-          />
+          <input type="number" placeholder="Phone" className={classes.Inputs} />
         </Grid>
         <Grid item xs={12} sm={6} md={6} xl={6}>
           <select className={classes.Inputs}>
@@ -53,23 +38,20 @@ const TicketShop = () => {
         <Grid item xs={12} sm={6} md={6} xl={6}>
           <input
             type="number"
-            min={1}
-            placeholder="Number of Tickets"
+            placeholder="How match"
             className={classes.Inputs}
           />
         </Grid>
-        <Grid item xs={12} sm={6} md={6} xl={6}>
-          <div>
-            <span> Amount:1000</span>
-          </div>
-        </Grid>
-        <Grid item xs={12}>
-          <Divider />
-          <Payment />
+        <Grid item xs={12} sm={12} md={12} xl={12}>
+          <textarea
+            rows={10}
+            placeholder="Description"
+            className={classes.textArea}
+          />
         </Grid>
       </Grid>
     </React.Fragment>
   )
 }
 
-export default TicketShop
+export default Refunds

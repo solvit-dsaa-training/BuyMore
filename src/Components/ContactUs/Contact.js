@@ -3,7 +3,7 @@ import { useStyles } from "./style"
 import "./contact.css"
 import Navigation from "../Navigation/Navigation"
 import ContactForm from "./ContactForm"
-import Grid from "@mui/material/Grid"
+import Grid from "@material-ui/core/Grid"
 import Footer from "../Footer/Footer"
 
 /**
@@ -19,56 +19,47 @@ const Contact = () => {
     <React.Fragment>
       <Navigation />
       <div className={classes.Container}>
-        <div className={classes.PartOne}>
+        <div className="PartOne">
           <h1 className="contact__heading-primary">
             <span className="contact__heading-main">Don't Hestate To </span>
             <span className="contact__heading-sub">Contact us</span>
           </h1>
         </div>
         <div className="contact__form-container">
-          <h4 className={classes.getInTouch}> Get in Touch</h4>
-
-          <Grid container rowSpacing={1}>
-            <Grid item xs={6}>
+          <Grid container spacing={3}>
+            <Grid item xs={12}>
+              <h4 className={classes.getInTouch}> Get in Touch</h4>
+            </Grid>
+            <Grid item xs={12} sm={12} md={6} xl={6}>
               <ContactForm />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={12} md={6} xl={6}>
               <div className={classes.contactDetailsContainer}>
-                <h4 className={classes.getInTouch}>Contact Details</h4>
+                <h4 className="getInTouch">Contact Details</h4>
                 <div>
                   <div>
                     <span className={classes.contactTitle}>EMAIL</span>
                   </div>
                   <div>
-                    <span>
-                      <strong>example@gmail.com</strong>
-                    </span>
+                    <span>example@gmail.com</span>
                   </div>
                   <div>
                     <span className={classes.contactTitle}>PHONE</span>
                   </div>
                   <div>
-                    <span>
-                      <strong>+25078486836</strong>
-                    </span>
+                    <span>+25078486836</span>
                   </div>
                   <div>
                     <span className={classes.contactTitle}>ADDRESS</span>
                   </div>
                   <div>
-                    <span>
-                      <strong>Kigali,Rwanda </strong>
-                    </span>
+                    <span>Kigali,Rwanda</span>
                   </div>
                   <div>
-                    <span>
-                      <strong>GASABO </strong>
-                    </span>
+                    <span>GASABO</span>
                   </div>
                   <div>
-                    <span>
-                      <strong>KN 123</strong>
-                    </span>
+                    <span>KN 123</span>
                   </div>
                 </div>
               </div>

@@ -1,4 +1,6 @@
 import React from "react"
+import Refunded from "./RefundedAnalytics"
+import { Divider } from "antd"
 import {
   LineChart,
   Line,
@@ -6,26 +8,25 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts"
 import { useStyles } from "./style"
 
 const data = [
   {
-    name: "January",
+    name: "Jan",
     soldTickets: 4000,
   },
   {
-    name: "February",
+    name: "Feb",
     soldTickets: 1000,
   },
   {
-    name: "March",
+    name: "Mar",
     soldTickets: 8000,
   },
   {
-    name: "April",
+    name: "Apr",
     soldTickets: 2000,
   },
   {
@@ -41,23 +42,23 @@ const data = [
     soldTickets: 3000,
   },
   {
-    name: "August",
+    name: "Aug",
     soldTickets: 4000,
   },
   {
-    name: "October",
+    name: "Sept",
     soldTickets: 2000,
   },
   {
-    name: "December",
-    soldTickets: 1000,
-  },
-  {
-    name: "November",
+    name: "Oct",
     soldTickets: 6000,
   },
   {
-    name: "December",
+    name: "Nov",
+    soldTickets: 4000,
+  },
+  {
+    name: "Dec",
     soldTickets: 20000,
   },
 ]
@@ -66,32 +67,37 @@ const Analytics = () => {
   const classes = useStyles()
 
   return (
-    <ResponsiveContainer width="100%" aspect={3} className={classes.Container}>
-      <LineChart
-        width={500}
-        height={300}
-        data={data}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" horizontal="" vertical="" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Line
-          type="monotone"
-          dataKey="soldTickets"
-          stroke="#8884d8"
-          activeDot={{ r: 8 }}
-        />
-        {/* <Line type="monotone" dataKey="uv" stroke="#82ca9d" /> */}
-      </LineChart>
-    </ResponsiveContainer>
+    <React.Fragment>
+      <div className={classes.Container}>
+        <h1 className={classes.Title}>Monthly Sold Tickets</h1>
+        <ResponsiveContainer width="100%" aspect={3}>
+          <LineChart
+            width={500}
+            height={300}
+            data={data}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 20,
+              bottom: 5,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" horizontal="" vertical="" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Line
+              type="monotone"
+              dataKey="soldTickets"
+              stroke="#02B468"
+              activeDot={{ r: 8 }}
+            />
+          </LineChart>
+        </ResponsiveContainer>
+        <Divider />
+        <Refunded />
+      </div>
+    </React.Fragment>
   )
 }
 

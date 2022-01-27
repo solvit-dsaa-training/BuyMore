@@ -1,61 +1,45 @@
 import React from "react"
-import { List } from "antd"
+import { Row, Col } from "antd"
 import { useStyles } from "./style"
-
-const listData = []
-for (let i = 0; i < 23; i++) {
-  listData.push({
-    Topic: "Topic of the event",
-    title: `Topic of the event${i}`,
-    description:
-      "Ant Design, a design language for background applications, is refined by Ant UED Team.",
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five .",
-  })
-}
 
 const PendingEvents = () => {
   const classes = useStyles()
+
   return (
     <React.Fragment>
-      <List
-        itemLayout="vertical"
-        size="large"
-        pagination={{
-          onChange: (page) => {
-            console.log(page)
-          },
-          pageSize: 3,
-        }}
-        dataSource={listData}
-        renderItem={(item) => (
-          <List.Item
-            key={item.title}
-            actions={[
-              <button className={classes.SendBtn} style={{ width: "100px" }}>
-                Pending
-              </button>,
-              <button
-                className={classes.SendBtn}
-                style={{ width: "100px", backgroundColor: "red" }}
-              >
-                Delete
-              </button>,
-            ]}
-            extra={
+      <div className={classes.Container}>
+        <Row
+          gutter={{ xs: 8, sm: 16, md: 24, lg: 5 }}
+          style={{ marginBottom: "30px" }}
+        >
+          <Col className="gutter-row" span={16}>
+            <div className={classes.EventContainer}>
+              <h1 className={classes.EventTitle}>
+                <strong>What is Lorem Ipsum?</strong>
+              </h1>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s,
+              </p>
+
+              <div></div>
+              <div style={{ marginTop: "40px" }}>
+                <button className={classes.ApproveBtn}>Approved</button>
+              </div>
+            </div>
+          </Col>
+          <Col className="gutter-row" span={8}>
+            <div>
               <img
-                width={272}
-                alt="logo"
-                src="https://cdn.pixabay.com/photo/2016/11/23/15/48/audience-1853662__340.jpg"
+                className={classes.EventImage}
+                src="https://cdn.pixabay.com/photo/2014/05/21/15/18/musician-349790_960_720.jpg"
+                alt="event_title"
               />
-            }
-          >
-            <List.Item.Meta title={item.title} />
-            {item.content}
-          </List.Item>
-        )}
-      />
-      ,
+            </div>
+          </Col>
+        </Row>
+      </div>
     </React.Fragment>
   )
 }

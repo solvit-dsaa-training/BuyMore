@@ -1,7 +1,6 @@
 import { makeStyles } from "@mui/styles"
 
 export const useStyles = makeStyles({
-  header: { height: "100vh" },
   HeadingPrimary: {
     width: "464px",
     height: "167px",

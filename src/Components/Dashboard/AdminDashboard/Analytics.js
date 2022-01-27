@@ -1,4 +1,5 @@
 import React from "react"
+import Grid from "@material-ui/core/Grid"
 import {
   LineChart,
   Line,
@@ -13,85 +14,98 @@ import { useStyles } from "./style"
 
 const data = [
   {
-    name: "January",
-    RegisteredEvents: 4000,
+    name: "Jan",
+    Events: 4000,
   },
   {
-    name: "February",
-    RegisteredEvents: 1000,
+    name: "Feb",
+    Events: 1000,
   },
   {
-    name: "March",
-    RegisteredEvents: 8000,
+    name: "Mar",
+    Events: 8000,
   },
   {
-    name: "April",
-    RegisteredEvents: 2000,
+    name: "Apr",
+    Events: 2000,
   },
   {
     name: "May",
-    RegisteredEvents: 10000,
+    Events: 10000,
   },
   {
     name: "June",
-    RegisteredEvents: 5000,
+    Events: 5000,
   },
   {
     name: "July",
-    RegisteredEvents: 3000,
+    Events: 3000,
   },
   {
-    name: "August",
-    RegisteredEvents: 4000,
+    name: "Aug",
+    Events: 4000,
   },
   {
-    name: "October",
-    RegisteredEvents: 2000,
+    name: "Sept",
+    Events: 2000,
   },
   {
-    name: "December",
-    RegisteredEvents: 1000,
+    name: "Oct",
+    Events: 6000,
   },
   {
-    name: "November",
-    RegisteredEvents: 6000,
+    name: "Nov",
+    Events: 4000,
   },
   {
-    name: "December",
-    RegisteredEvents: 20000,
+    name: "Dec",
+    Events: 20000,
   },
 ]
-
 const Analytics = () => {
   const classes = useStyles()
 
   return (
-    <ResponsiveContainer width="100%" aspect={3} className={classes.Container}>
-      <LineChart
-        width={500}
-        height={300}
-        data={data}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" horizontal="" vertical="" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Line
-          type="monotone"
-          dataKey="RegisteredEvents"
-          stroke="#8884d8"
-          activeDot={{ r: 8 }}
-        />
-        {/* <Line type="monotone" dataKey="uv" stroke="#82ca9d" /> */}
-      </LineChart>
-    </ResponsiveContainer>
+    <React.Fragment>
+      <div className={classes.Container}>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <h1 className={classes.Title}> Registered Events</h1>
+          </Grid>
+          <Grid item xs={12}>
+            <ResponsiveContainer width="100%" aspect={3}>
+              <LineChart
+                width={500}
+                height={300}
+                data={data}
+                margin={{
+                  top: 5,
+                  right: 30,
+                  left: 20,
+                  bottom: 5,
+                }}
+              >
+                <CartesianGrid
+                  strokeDasharray="3 3"
+                  horizontal=""
+                  vertical=""
+                />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Line
+                  type="monotone"
+                  dataKey="Events"
+                  stroke="#02B468"
+                  activeDot={{ r: 8 }}
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </Grid>
+        </Grid>
+      </div>
+    </React.Fragment>
   )
 }
 

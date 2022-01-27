@@ -9,22 +9,17 @@ import List from "@mui/material/List"
 import Typography from "@mui/material/Typography"
 import Divider from "@mui/material/Divider"
 import IconButton from "@mui/material/IconButton"
-import Badge from "@mui/material/Badge"
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 import MenuIcon from "@mui/icons-material/Menu"
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft"
-import NotificationsIcon from "@mui/icons-material/Notifications"
-import SettingsIcon from "@mui/icons-material/Settings"
 import Avatar from "@mui/material/Avatar"
 import SideBar from "./Sidebar"
 import { useStyles } from "./style"
 import Analytics from "./Analytics"
 import PendingEvents from "./PendingEvents"
 import CreateEvent from "./CreateEvent"
-import HappenedEvents from "./Happened"
-import Refunded from "./Refunded"
-import SoldTicket from "./SOldTickets"
+import ExpiredEvents from "./Expired"
 import CreateTicket from "./CreateTicket"
 import Users from "./Users"
 
@@ -78,12 +73,10 @@ const mdTheme = createTheme()
 
 const DashboardContent = () => {
   const classes = useStyles()
-  const [open, setOpen] = React.useState(true)
+  const [open, setOpen] = React.useState(false)
   const [isAnalytics, setIsAnalytics] = React.useState(true)
   const [isPending, setIsPending] = React.useState(false)
   const [isHappened, setIsHappened] = React.useState(false)
-  const [isSoldTicket, setIsSoldTicket] = React.useState(false)
-  const [isRefunded, setIsRefunded] = React.useState(false)
   const [isCreateEvent, setIsCreateEvent] = React.useState(false)
   const [isUsers, setIsUsers] = React.useState(false)
   const [isCreateTicket, setIsCreateTicket] = React.useState(false)
@@ -96,8 +89,6 @@ const DashboardContent = () => {
     setIsAnalytics(true)
     setIsPending(false)
     setIsHappened(false)
-    setIsSoldTicket(false)
-    setIsRefunded(false)
     setIsCreateEvent(false)
     setIsCreateTicket(false)
     setIsUsers(false)
@@ -107,8 +98,6 @@ const DashboardContent = () => {
     setIsAnalytics(false)
     setIsPending(true)
     setIsHappened(false)
-    setIsSoldTicket(false)
-    setIsRefunded(false)
     setIsCreateEvent(false)
     setIsCreateTicket(false)
     setIsUsers(false)
@@ -118,41 +107,15 @@ const DashboardContent = () => {
     setIsAnalytics(false)
     setIsPending(false)
     setIsHappened(true)
-    setIsSoldTicket(false)
-    setIsRefunded(false)
     setIsCreateEvent(false)
     setIsCreateTicket(false)
     setIsUsers(false)
-    setOpen(true)
-  }
-  const handleSoldTicket = () => {
-    setIsAnalytics(false)
-    setIsPending(false)
-    setIsHappened(false)
-    setIsSoldTicket(true)
-    setIsRefunded(false)
-    setIsCreateEvent(false)
-    setIsUsers(false)
-    setIsCreateTicket(false)
-    setOpen(true)
-  }
-  const handleRefunds = () => {
-    setIsAnalytics(false)
-    setIsPending(false)
-    setIsHappened(false)
-    setIsSoldTicket(false)
-    setIsCreateEvent(false)
-    setIsUsers(false)
-    setIsCreateTicket(false)
-    setIsRefunded(true)
     setOpen(true)
   }
   const handleCreateEvent = () => {
     setIsAnalytics(false)
     setIsPending(false)
     setIsHappened(false)
-    setIsSoldTicket(false)
-    setIsRefunded(false)
     setIsUsers(false)
     setIsCreateTicket(false)
     setIsCreateEvent(true)
@@ -162,8 +125,6 @@ const DashboardContent = () => {
     setIsAnalytics(false)
     setIsPending(false)
     setIsHappened(false)
-    setIsSoldTicket(false)
-    setIsRefunded(false)
     setIsCreateEvent(false)
     setIsCreateTicket(false)
     setIsUsers(true)
@@ -173,8 +134,6 @@ const DashboardContent = () => {
     setIsAnalytics(false)
     setIsPending(false)
     setIsHappened(false)
-    setIsSoldTicket(false)
-    setIsRefunded(false)
     setIsCreateEvent(false)
     setIsUsers(false)
     setIsCreateTicket(true)
@@ -189,13 +148,7 @@ const DashboardContent = () => {
       setContent(<PendingEvents />)
     }
     if (isHappened) {
-      setContent(<HappenedEvents />)
-    }
-    if (isSoldTicket) {
-      setContent(<SoldTicket />)
-    }
-    if (isRefunded) {
-      setContent(<Refunded />)
+      setContent(<ExpiredEvents />)
     }
     if (isCreateEvent) {
       setContent(<CreateEvent />)
@@ -210,8 +163,6 @@ const DashboardContent = () => {
     isAnalytics,
     isPending,
     isHappened,
-    isSoldTicket,
-    isRefunded,
     isCreateEvent,
     isUsers,
     isCreateTicket,
@@ -250,17 +201,11 @@ const DashboardContent = () => {
               DASHBOARD
             </Typography>
             <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
+              <Avatar
+                alt="user profile"
+                src="https://avatars.githubusercontent.com/u/59208992?v=4"
+              />
             </IconButton>
-            <IconButton color="inherit">
-              <SettingsIcon />
-            </IconButton>
-            <Avatar
-              alt="user profile"
-              src="https://avatars.githubusercontent.com/u/59208992?v=4"
-            />
             <button className={classes.LogoutBtn}> Logout</button>
           </Toolbar>
         </AppBar>
@@ -284,8 +229,6 @@ const DashboardContent = () => {
               handleAnalytics={handleAnalytics}
               handlePending={handlePending}
               handleHappened={handleHappened}
-              handleSoldTicket={handleSoldTicket}
-              handleRefunds={handleRefunds}
               handleCreateEvent={handleCreateEvent}
               handleUsers={handleUsers}
               handleCreateTickets={handleCreateTickets}

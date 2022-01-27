@@ -17,7 +17,7 @@ const About = () => {
     <React.Fragment>
       <Navigation />
       <div className="about">
-        <div className="about__header">about us</div>
+        <div className="about__header">&nbsp;</div>
         <div className={classes.container}></div>
       </div>
       <Footer />

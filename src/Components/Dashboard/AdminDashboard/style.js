@@ -6,7 +6,7 @@ export const useStyles = makeStyles({
     backgroundColor: "#121212",
   },
   Icons: {
-    color: "#0000000",
+    color: "#02B468",
   },
   userTableIcons: {
     color: "#02B468",
@@ -22,10 +22,11 @@ export const useStyles = makeStyles({
     backgroundColor: "#02B468",
   },
   createEvent: {
+    textAlign: "center",
     borderRadius: "5px",
     boxShadow: "0px 2px 5px rgba(0,0,0,0.25)",
     background: "rgba(196, 196, 196, 0.05)",
-    padding: "20px 0px 20px 200px",
+    // padding: "20px 0px 20px 200px",
   },
   Title: {
     fontSize: "20px",
@@ -80,7 +81,6 @@ export const useStyles = makeStyles({
   },
   thumbnail: {
     border: "1px solid #333",
-    // width: "30%",
     height: "35px",
     background: "#FFFFFF",
     boxSizing: "border-box",
@@ -90,7 +90,7 @@ export const useStyles = makeStyles({
     textIndent: "10px",
     color: "#000000",
   },
-  speakers: {},
+
   SendBtn: {
     width: "20%",
     height: "40px",
@@ -101,13 +101,50 @@ export const useStyles = makeStyles({
     cursor: "pointer",
     color: "#ffffff",
   },
+  ApproveBtn: {
+    width: "15%",
+    padding: "5px",
+    background: " #02B468",
+    border: "1px solid #02B468",
+    boxSizing: "border-box",
+    borderRadius: "3px",
+    cursor: "pointer",
+    color: "#ffffff",
+  },
+
+  RejectBtn: {
+    width: "15%",
+    padding: "5px",
+    background: "red",
+    borderStyle: "none",
+    boxSizing: "border-box",
+    borderRadius: "3px",
+    color: "#ffffff",
+    marginLeft: "30px",
+  },
+  toogleBtn: {
+    backgroundColor: "#02B468",
+    float: "right",
+    cursor: "pointer",
+    marginBottom: "30px",
+    borderStyle: "none",
+    padding: "5px",
+    color: "#FFFFFF",
+    borderRadius: "5px",
+    marginTop: "25px",
+  },
+  EventContainer: {
+    padding: "20px",
+  },
   LogoutBtn: {
     width: "10%",
-    height: "40px",
+    padding: "5px",
+    marginLeft: "20px",
     background: " #FFFFFF",
     boxSizing: "border-box",
     borderRadius: "3px",
     cursor: "pointer",
+    borderStyle: "none",
     color: "#000000",
   },
   InputPartOne: {
@@ -147,5 +184,17 @@ export const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
     marginBottom: "20px",
+  },
+  EventTitle: {
+    fontSize: "25px",
+    fontWeight: 700,
+    textAlign: "left",
+    color: "#0000000",
+    marginBottom: "20px",
+  },
+  EventImage: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
   },
 })

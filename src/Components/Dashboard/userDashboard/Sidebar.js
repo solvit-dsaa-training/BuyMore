@@ -10,9 +10,12 @@ import PendingActionsIcon from "@mui/icons-material/PendingActions"
 import DoneAllIcon from "@mui/icons-material/DoneAll"
 import AirplaneTicketIcon from "@mui/icons-material/AirplaneTicket"
 import TimelineIcon from "@mui/icons-material/Timeline"
-import PaidIcon from "@mui/icons-material/Paid"
 import AssignmentReturnIcon from "@mui/icons-material/AssignmentReturn"
 import Collapse from "@mui/material/Collapse"
+import Badge from "@mui/material/Badge"
+import IconButton from "@mui/material/IconButton"
+import NotificationsIcon from "@mui/icons-material/Notifications"
+
 import { useStyles } from "./style"
 
 const MainListItems = ({
@@ -77,6 +80,11 @@ const MainListItems = ({
               />
             </ListItemIcon>
             <ListItemText primary="Pending" className={classes.labels} />
+            <IconButton>
+              <Badge badgeContent={4} color="secondary">
+                <NotificationsIcon className={classes.Icons} />
+              </Badge>
+            </IconButton>
           </ListItemButton>
           <ListItemButton onClick={handleHappened}>
             <ListItemIcon className={classes.InnerIcon}>
@@ -86,6 +94,11 @@ const MainListItems = ({
               />
             </ListItemIcon>
             <ListItemText primary="Expired" className={classes.labels} />
+            <IconButton>
+              <Badge badgeContent={4} color="secondary">
+                <NotificationsIcon className={classes.Icons} />
+              </Badge>
+            </IconButton>
           </ListItemButton>
         </Collapse>
         <ListItemButton onClick={handleTicket}>
@@ -108,15 +121,6 @@ const MainListItems = ({
               />
             </ListItemIcon>
             <ListItemText primary="Create" className={classes.labels} />
-          </ListItemButton>
-          <ListItemButton onClick={handleSoldTicket}>
-            <ListItemIcon className={classes.InnerIcon}>
-              <PaidIcon
-                className={classes.Icons}
-                style={{ fontSize: "18px", marginLeft: "10px" }}
-              />
-            </ListItemIcon>
-            <ListItemText primary="Sold" className={classes.labels} />
           </ListItemButton>
           <ListItemButton onClick={handleRefunds}>
             <ListItemIcon className={classes.InnerIcon}>

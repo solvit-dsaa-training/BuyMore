@@ -12,12 +12,12 @@
   display: flex;
 }
 .Navigation__items ul {
-  margin-left: 600px;
+  margin-left: 630px;
   width: 100%;
   list-style: none;
 }
 .Navigation__items ul li {
-  margin-right: 20px;
+  margin-right: 16px;
   display: inline;
   cursor: pointer;
   font-family: Mulish;
@@ -31,16 +31,11 @@
   text-transform: uppercase;
 }
 
-.Navigation__logo {
-  width: 228px;
-  height: 40px;
-  font-family: Mulish;
+.Navigation__logo span {
+  display: block;
   font-style: normal;
-  font-weight: 200;
+  font-weight: 600;
   font-size: 35px;
-  line-height: 44px;
-  display: flex;
-  align-items: center;
   color: #ffffff;
   cursor: pointer;
 }
@@ -103,4 +98,86 @@
 }
 .Modal {
   border-radius: 5px;
+}
+.Menu {
+  display: none;
+}
+.drawer {
+  background-color: #02b468;
+}
+/**MEDIA QUERIES*/
+@media (max-width: 1024px) {
+  .contact__items {
+    display: flex;
+    position: absolute;
+    left: 720px;
+  }
+  .Navigation__items ul {
+    margin-left: 302px;
+    width: 100%;
+    list-style: none;
+  }
+  .Navigation__logo span {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact__items {
+    display: flex;
+    position: absolute;
+    left: 400px;
+  }
+  .Navigation__items ul {
+    margin-left: 20px;
+    width: 100%;
+    list-style: none;
+  }
+  .Navigation__logo span {
+    transform: translateY(-10px);
+  }
+}
+@media (max-width: 425px) {
+  .contact__items {
+    display: flex;
+    position: absolute;
+    left: 0px;
+  }
+  .Navigation__items ul {
+    display: none;
+  }
+  .Navigation__logo span {
+    font-weight: 600;
+    font-size: 25px;
+  }
+  .Menu {
+    display: block;
+    transform: translateY(-40px);
+    margin-left: 280px;
+    color: #ffffff;
+  }
+  .moble__Navigations {
+    margin-bottom: 20px;
+  }
+  .moble__Navigations span {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+@media (max-width: 375px) {
+  .Menu {
+    display: block;
+    transform: translateY(-45px);
+    margin-left: 240px;
+    color: #ffffff;
+  }
+}
+@media (max-width: 320px) {
+  .Menu {
+    display: block;
+    transform: translateY(-45px);
+    margin-left: 200px;
+    color: #ffffff;
+  }
 }

@@ -8,10 +8,11 @@
   color: #ffffff;
   cursor: pointer;
   font-weight: 600;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-size: 16px;
   position: relative;
   transition: all 1s ease-out;
+  font-family: mulish;
 }
 .event__ticketbtn:hover {
   transform: translateY(2px);
@@ -43,3 +44,9 @@
 .event__ticketbtn-container {
   text-align: center;
 }
+
+/* @media (max-width: 1440px) {
+  .event__card {
+    width: 500px;
+  }
+} */

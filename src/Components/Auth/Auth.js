@@ -2,6 +2,7 @@
 import React from "react"
 import GoogleLogin from "react-google-login"
 import { useStyles } from "./style"
+import "./Auth.css"
 
 const responseGoogle = (response) => {
   console.log(response)
@@ -21,7 +22,7 @@ const Auth = ({ isSignUp, isLogin }) => {
 
   return (
     <React.Fragment>
-      <form className={classes.root}>
+      <form className="root">
         <div>
           <input type="email" placeholder="Email" className={classes.Inputs} />
         </div>

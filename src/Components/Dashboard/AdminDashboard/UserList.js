@@ -14,7 +14,7 @@ import { Modal } from "antd"
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: "#121212",
+    backgroundColor: "#02B468",
     color: theme.palette.common.white,
   },
   [`&.${tableCellClasses.body}`]: {

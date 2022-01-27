@@ -13,7 +13,7 @@ const Header = () => {
   const classes = useStyles()
 
   return (
-    <header className={`${classes.header} `}>
+    <header className="header">
       <Carousel fade>
         <Carousel.Item>
           <img
@@ -60,7 +60,7 @@ const Header = () => {
           <Carousel.Caption>
             <div className="welcome__mesage__container">
               <h3 className="event__welcome-message">
-                <span>Enjoy Accoustic By Cow Boys 🎸!!! </span>
+                <span>Enjoy Accoustic By Cow Boys.</span>
               </h3>
               <button className="welcome__ticket__btn">
                 <strong>Buy Ticket</strong>

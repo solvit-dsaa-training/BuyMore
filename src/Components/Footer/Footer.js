@@ -1,6 +1,6 @@
 import React from "react"
 import { useStyles } from "./style"
-import Grid from "@mui/material/Grid"
+import Grid from "@material-ui/core/Grid"
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded"
 import TwitterIcon from "@mui/icons-material/Twitter"
 import InstagramIcon from "@mui/icons-material/Instagram"
@@ -27,8 +27,8 @@ const Footer = () => {
   return (
     <React.Fragment>
       <div className={`${classes.footerContainer} footer`}>
-        <Grid container rowSpacing={1}>
-          <Grid item xs={4}>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={4} md={4} xl={4}>
             <div>
               <span className={classes.FooterTitles}>User Manual</span>
               <div>
@@ -41,7 +41,7 @@ const Footer = () => {
               </div>
             </div>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={4} md={4} xl={4}>
             <div>
               <span className={classes.FooterTitles}>Quick Links</span>
               <div>
@@ -62,7 +62,7 @@ const Footer = () => {
               </div>
             </div>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={4} md={4} xl={4}>
             <div>
               <span className={classes.FooterTitles}>Find Event By</span>
               <div>
@@ -97,57 +97,52 @@ const Footer = () => {
               </div>
             </div>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} sm={12} md={12} xl={12}>
             <div>
               <span className={classes.followus}>Follow us</span>
             </div>
-            <div className={classes.SocialMediaContainer}>
-              <div className={classes.SocialMediaIcon}>
+            <div className="SocialMediaContainer">
+              <div className="SocialMediaIcon">
                 <a
                   href="https://www.facebook.com"
                   target="_blank"
                   rel="noreferrer"
-                  style={{ color: "#02B468" }}
                 >
                   <FacebookRoundedIcon />
                 </a>
               </div>
-              <div className={classes.SocialMediaIcon}>
+              <div className="SocialMediaIcon">
                 <a
                   href="https://www.twitter.com"
                   target="_blank"
                   rel="noreferrer"
-                  style={{ color: "#02B468" }}
                 >
                   <TwitterIcon />
                 </a>
               </div>
-              <div className={classes.SocialMediaIcon}>
+              <div className="SocialMediaIcon">
                 <a
                   href="https://www.instagram.com"
                   target="_blank"
                   rel="noreferrer"
-                  style={{ color: "#02B468" }}
                 >
                   <InstagramIcon />
                 </a>
               </div>
-              <div className={classes.SocialMediaIcon}>
+              <div className="SocialMediaIcon">
                 <a
                   href="https://www.linkedin.com"
                   target="_blank"
                   rel="noreferrer"
-                  style={{ color: "#02B468" }}
                 >
                   <LinkedInIcon />
                 </a>
               </div>
-              <div className={classes.SocialMediaIcon}>
+              <div className="SocialMediaIcon">
                 <a
                   href="https://www.youtube.com"
                   target="_blank"
                   rel="noreferrer"
-                  style={{ color: "#02B468" }}
                 >
                   <YouTubeIcon />
                 </a>

@@ -1,8 +1,8 @@
 import React from "react"
 import { Row, Col, Modal } from "antd"
 import TicketShop from "./TicketShop"
-import Countdown from "react-countdown"
 import Countup from "react-countup"
+import Grid from "@material-ui/core/Grid"
 /**
  *
  *
@@ -62,11 +62,8 @@ const EventTicket = () => {
           <TicketShop />
         </Modal>
       </>
-      <Row
-        gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
-        style={{ marginTop: "40px" }}
-      >
-        <Col span={8}>
+      <Grid container spacing={3}>
+        <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
           <div>
             <div className="event__ticket__card">
               <div className="event__tick-header">
@@ -90,8 +87,8 @@ const EventTicket = () => {
               </div>
             </div>
           </div>
-        </Col>
-        <Col span={8}>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
           <div>
             <div className="event__ticket__card">
               <div className="event__tick-header ">
@@ -116,8 +113,8 @@ const EventTicket = () => {
               </div>
             </div>
           </div>
-        </Col>
-        <Col span={8}>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
           <div>
             <div className="event__ticket__card">
               <div className="event__tick-header ">
@@ -143,8 +140,8 @@ const EventTicket = () => {
               </div>
             </div>
           </div>
-        </Col>
-      </Row>
+        </Grid>
+      </Grid>
     </React.Fragment>
   )
 }

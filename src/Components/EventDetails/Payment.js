@@ -1,7 +1,7 @@
 import React from "react"
 import { useStyles } from "./style"
 import { FlutterWaveButton, closePaymentModal } from "flutterwave-react-v3"
-
+import "./event.css"
 const Payment = () => {
   const classes = useStyles()
   const config = {
@@ -34,7 +34,7 @@ const Payment = () => {
 
   return (
     <div>
-      <FlutterWaveButton {...fwConfig} className={classes.SendBtn} />
+      <FlutterWaveButton {...fwConfig} className="paybtn" />
     </div>
   )
 }

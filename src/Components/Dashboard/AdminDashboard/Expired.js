@@ -13,10 +13,9 @@ import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined"
 import MapIcon from "@mui/icons-material/Map"
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined"
 
-const PendingEvents = () => {
+const Expired = () => {
   const classes = useStyles()
   const [expended, setExpended] = React.useState(false)
-
   return (
     <React.Fragment>
       <div className={classes.Container}>
@@ -161,8 +160,7 @@ const PendingEvents = () => {
                 </Collapse>
               </div>
               <div style={{ marginTop: "40px" }}>
-                <button className={classes.ApproveBtn}>Approve</button>
-                <button className={classes.RejectBtn}>Reject</button>
+                <div className={classes.RejectBtn}>Expired</div>
               </div>
             </div>
           </Col>
@@ -181,4 +179,4 @@ const PendingEvents = () => {
   )
 }
 
-export default PendingEvents
+export default Expired
