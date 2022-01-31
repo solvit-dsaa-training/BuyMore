@@ -1,0 +1,10 @@
+@media (max-width: 1600px) {
+  .card {
+    width: 500px;
+  }
+  .event__ticket--btn {
+    position: absolute;
+    top: 200px;
+    left: 240px;
+  }
+}

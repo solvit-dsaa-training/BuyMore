@@ -1,0 +1,75 @@
+import { makeStyles } from "@mui/styles"
+
+export const useStyles = makeStyles({
+  root: {
+    backgroundColor: "#FFFFFF",
+  },
+  SearchOptionContainer: {
+    marginTop: "150px",
+  },
+  MainContainer: {
+    padding: "0px 50px",
+  },
+  subHeaders: {
+    margin: "80px 0px 80px 0px",
+    fontFamily: "Mulish",
+    fontStyle: "normal",
+    fontWeight: "bold",
+    fontSize: "20px",
+    lineHeight: "1.7px",
+    alignItems: "center",
+    color: " #02B468",
+    letterSpacing: "2px",
+    textTransform: "uppercase",
+  },
+  setting: {
+    color: " #02B468",
+    float: "right",
+    marginTop: "10px",
+    cursor: "pointer",
+  },
+  SendBtn: {
+    width: "100px",
+    background: " #02B468",
+    border: "1px solid #02B468",
+    boxSizing: "border-box",
+    borderRadius: "3px",
+    cursor: "pointer",
+    color: "#ffffff",
+  },
+  cancelBtn: {
+    width: "100px",
+    background: " #555",
+    boxSizing: "border-box",
+    borderRadius: "3px",
+    cursor: "pointer",
+    color: "#ffffff",
+    borderStyle: "none",
+  },
+  Refund: {
+    textTransform: "uppercase",
+    color: "#02B468",
+    fontSize: "30px",
+  },
+  Inputs: {
+    width: "100%",
+    height: "40px",
+    background: "rgba(196, 196, 196, 0.05)",
+    border: "1px solid #02B468",
+    boxSizing: "border-box",
+    borderRadius: "5px",
+    marginBottom: "10px",
+    outline: "none",
+    textIndent: "10px",
+  },
+  textArea: {
+    width: "100%",
+    background: "rgba(196, 196, 196, 0.05)",
+    border: "1px solid #02B468",
+    boxSizing: "border-box",
+    borderRadius: "4px",
+    marginBottom: "10px",
+    outline: "none",
+    textIndent: "10px",
+  },
+})
