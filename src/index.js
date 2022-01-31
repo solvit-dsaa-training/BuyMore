@@ -5,10 +5,11 @@ import "antd/dist/antd.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./Style/mediaQuerry.css"
 import App from "./App"
+import Root from "./Root"
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Root>
     <App />
-  </React.StrictMode>,
+  </Root>,
   document.getElementById("root")
 )

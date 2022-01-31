@@ -37,9 +37,15 @@ const CreateEvent = () => {
               </div>
             </Grid>
             <Grid item xs={12}>
+              <div>
+                <span> Start Date</span>
+              </div>
               <input type="date" className={classes.Inputs} />
             </Grid>
             <Grid item xs={12}>
+              <div>
+                <span> End Date</span>
+              </div>
               <input type="date" className={classes.Inputs} />
             </Grid>
             <Grid item xs={12}>

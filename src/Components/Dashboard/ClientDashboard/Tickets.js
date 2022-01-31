@@ -26,15 +26,15 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow)
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein }
+function createData(ID, name, calories, fat, carbs, protein) {
+  return { ID, name, calories, fat, carbs, protein }
 }
 
 const rows = [
-  createData("1995, DEC, 17", "General", 1000, 6, 5000),
-  createData("1995, DEC, 17", "VIP", 1000, 9, 2000),
-  createData("1995, DEC, 17", "VVIP", 1000, 10, 3000),
-  createData("1995, DEC, 17", "General", 3000, 5, 1000),
+  createData("1235CD", "1995, DEC, 17", "General", 1000, 6, 5000),
+  createData("1235CD", "1995, DEC, 17", "VIP", 1000, 9, 2000),
+  createData("1235CD", "1995, DEC, 17", "VVIP", 1000, 10, 3000),
+  createData("1235CD", "1995, DEC, 17", "General", 3000, 5, 1000),
 ]
 
 const useStyles = makeStyles({
@@ -51,6 +51,7 @@ const Tickets = () => {
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
             <TableRow>
+              <StyledTableCell>Ticket ID</StyledTableCell>
               <StyledTableCell>Date</StyledTableCell>
               <StyledTableCell align="right">Type</StyledTableCell>
               <StyledTableCell align="right">Price</StyledTableCell>
@@ -61,6 +62,9 @@ const Tickets = () => {
           <TableBody>
             {rows.map((row) => (
               <StyledTableRow key={row.name}>
+                <StyledTableCell component="th" scope="row">
+                  {row.ID}
+                </StyledTableCell>
                 <StyledTableCell component="th" scope="row">
                   {row.name}
                 </StyledTableCell>
