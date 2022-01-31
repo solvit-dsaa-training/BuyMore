@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Api\FrontEventsController;
 use App\Http\Controllers\Api\SponsorsController;
 use App\Http\Controllers\Api\TicketsController;
+use App\Http\Controllers\Api\TransactionsController;
 use App\Http\Controllers\Api\UserApiController;
 use App\Http\Controllers\EventsController;
 use Illuminate\Http\Request;
@@ -67,4 +69,7 @@ Route::middleware('auth:api','jwt.verify','active')->group(function(){
 
 Route::post('register',[UserApiController::class,'register']);
 Route::post('login', [UserApiController::class,'login']);
+Route::get('events', [FrontEventsController::class,'index']);
+Route::post('events/checkout/{ticket}', [TransactionsController::class,'store']);
+Route::post('events/guest-checkout/{ticket}', [TransactionsController::class,'store']);
 

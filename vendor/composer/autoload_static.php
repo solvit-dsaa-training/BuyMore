@@ -560,6 +560,8 @@ class ComposerStaticInit4a42e6fd7c0336c97c095b9a22852976
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\Api\\FrontEventsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/FrontEventsController.php',
+        'App\\Http\\Controllers\\Api\\SponsorsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/SponsorsController.php',
         'App\\Http\\Controllers\\Api\\TicketsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/TicketsController.php',
         'App\\Http\\Controllers\\Api\\UserApiController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/UserApiController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
@@ -588,6 +590,7 @@ class ComposerStaticInit4a42e6fd7c0336c97c095b9a22852976
         'App\\Models\\Event' => __DIR__ . '/../..' . '/app/Models/Event.php',
         'App\\Models\\Sponsor' => __DIR__ . '/../..' . '/app/Models/Sponsor.php',
         'App\\Models\\Ticket' => __DIR__ . '/../..' . '/app/Models/Ticket.php',
+        'App\\Models\\Transaction' => __DIR__ . '/../..' . '/app/Models/Transaction.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
